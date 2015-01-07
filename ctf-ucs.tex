@@ -30,18 +30,18 @@
 \maketitle
 
 
-\section{Extratores de Metadados de Binários}
+\section{Extratores de Metadados e Binários}
 
 \begin{ldesc}
-	\li[``Adivinha'' o tipo de arquivo usando mágica]      \$ file \I{file}
+	\li[``Adivinha'' o tipo de arquivo usando Magic number]      \$ file \I{file}
 	\li[\textit{Strings} printáveis no arquivo binário] \$ strings \I{file}
 	\li[\textit{Dump} hexadecimal]                 \$ xxd [-c\I{16} -g\I{2}] \I{file} \li
 	                                      \$ hexdump \I{file} \li
 										  \$ od -tx1z \I{file}
 	\li[Editor binário hexadecimal]        \$ elvis [-c"display hex"] \I{file}
-	\li[Extrai dados JPEG EXIF]           \$ exiv2 \I{img.jpeg} \li
+	\li[Extrai dados EXIF do JPEG]           \$ exiv2 \I{img.jpeg} \li
 	                                      \$ jhead \I{img.jpeg}
-	\li[Extrai metadados PNG]             \$ pngcheck -7ptv \I{img.png}
+	\li[Extrai metadados do PNG]             \$ pngcheck -7ptv \I{img.png}
 	\li[Lista conteúdo de um \textit{tarball}]            \$ tar -tf \I{tarball.tar}
 	\li[Lista conteúdo de um \textit{zip}]                \$ unzip -l \I{file.zip}
 	\li[Extrai metadados ID3]             \$ id3info \I{file.mp3}
@@ -212,43 +212,43 @@
 
 \pagebreak
 
-\section{Networking}
+\section{Rede}
 
 \begin{ldesc}
 	\li[Info about \I{port}] \$ cat /etc/services | grep \I{port}
 \end{ldesc}
 
-\subsection{Passive scanning}
+\subsection{Escaneamento passivo}
 
 \begin{ldesc}
-	\li[Network traffic (graphical)]  \$ wireshark
-	\li[Network traffic]              \$ tshark -i \I{interface} -f \I{filter}
-	\li[List interfaces]              \$ tshark -D
-	\li[Wifi HTTP traffic]            \$ tshark -i wlan0 -f "port 80"
+	\li[Tráfego de rede (gráfico)]  \$ wireshark
+	\li[Tráfego de rede]              \$ tshark -i \I{interface} -f \I{filter}
+	\li[Lista de interfaces]              \$ tshark -D
+	\li[Tráfego HTTP via Wifi]            \$ tshark -i wlan0 -f "port 80"
 	\li[Filter syntax]                \$ man pcap-filter
 	\li[Network traffic (altn.)]      \$ tcpdump
 \end{ldesc}
 
-\subsection{Active scanning}
+\subsection{Escaneamento ativo}
 
 \begin{ldesc}
-	\li[Open ports on host]           \$ nmap [-sV -O -p \I{prange}] \I{host}
-	\li[List hosts on a network]      \$ nmap [-sn] 192.168.0.*
+	\li[Portas abertas no host]           \$ nmap [-sV -O -p \I{prange}] \I{host}
+	\li[Lista hosts em uma rede]      \$ nmap [-sn] 192.168.0.*
 	\lI[Query \I{txt} DNS field]      \$ nslookup -query=txt \I{example.com}
-	\li[Query DNS info (on \I{srv})]  \$ dig \I{[@srv]} \I{example.com}
+	\li[Consulta informações do DNS (on \I{srv})]  \$ dig \I{[@srv]} \I{example.com}
 \end{ldesc}
 
-\subsection{Interacting}
+\subsection{Interagindo}
 
 \begin{ldesc}
-	\li[Network cat (GNU/BSD)]        \$ netcat host port
-	\li[Network cat (nmap altn.)]     \$ ncat host port
-	\li[Telnet to \I{host} on \I{port}] \$ telnet host port
+	\li[Network cat (GNU/BSD)]        \$ netcat host porta
+	\li[Network cat (nmap altn.)]     \$ ncat host porta
+	\li[Telnet para \I{host} na \I{porta}] \$ telnet host porta
 	% TODO: curl, wget
 \end{ldesc}
 
 
-\subsection{Reverse shell / Connect back}
+\subsection{Shell reversa / Connect back}
 
 \begin{ldesc}
 	\li[netcat listen] client\$ netcat -vlp 1337
@@ -260,7 +260,7 @@
 
 \pagebreak
 
-\section{Keyboard Scan Codes (US QWERTY)}
+\section{Códigos de digitalização do teclado (US QWERTY)}
 
 % Reference: http://www.win.tue.nl/~aeb/linux/kbd/scancodes-1.html
 
@@ -290,7 +290,7 @@
 \end{tabular}
 
 
-\section{Number/character conversion}
+\section{Número/conversão de caracteres}
 
 \begin{tabularlc}{lCCC}
 \li              \textnormal{Ruby}   & \textnormal{Haskell}
@@ -298,9 +298,9 @@
 %li[lib]                             & import Data.List
 %li[lib]                             & import Data.Tuple
 %li[lib]                             & import Data.Maybe
-\li[char to int]      'a'.ord        & ord 'a'
-\li[int to char]      0x61.chr       & chr 0x61
-\lI[from hexadecimal] "FF".to\_i(16) & foldl1 (\textbackslash{}x y -> x*16 + y) \li[] &
+\li[char para int]      'a'.ord        & ord 'a'
+\li[int para char]      0x61.chr       & chr 0x61
+\lI[a partir de hexadecimal] "FF".to\_i(16) & foldl1 (\textbackslash{}x y -> x*16 + y) \li[] &
                                        .~map digitToInt \$ "FF"
 \lI[to hexadecimal]   255.to\_s(16)  & map intToDigit .~reverse \li[] &
                                        .~unfoldr \li[] &
@@ -314,8 +314,8 @@
 \section{Dates}
 
 \begin{ldesc}
-	\li[Unix to Human] date -d "@seconds"
-	\li[Human to Unix] date -d "YYYY-mm-dd HH:MM:SS" -f +\%s
+	\li[Unix para Humano] date -d "@seconds"
+	\li[Humano para Unix] date -d "YYYY-mm-dd HH:MM:SS" -f +\%s
 \end{ldesc}
 
 \newpage
@@ -329,24 +329,25 @@
 % relevant package.
 
 \begin{ldesc}
-	\li[Image processing]  \$ pacman -S pinta gimp netpbm
-	\li[Image metadata]    \$ pacman -S jhead exiv2 pngcheck
-	\li[Barcode]           \$ pacman -S zbar
-	\li[Disk image]        \$ pacman -S sleuthkit libewf
+	\li[Processamento de imagem]  \$ pacman -S pinta gimp netpbm
+	\li[Metadados de imagem]    \$ pacman -S jhead exiv2 pngcheck
+	\li[Código de Barras]           \$ pacman -S zbar
+	\li[Image de disco]        \$ pacman -S sleuthkit libewf
 	\li[Networking (act.)] \$ pacman -S \{gnu,openbsd\}-netcat nmap
 	\li[Networking (psv.)] \$ pacman -S wireshark-\{cli,gtk\} tcpdump
 	\li[OCR]               \$ pacman -S tesseract tesseract-data-eng %\{,por,jpn}
-	\li[Encoding/Decoding] \$ pacman -S bsdgames
-	\li[8086 emulator] \$ pacman -U fake86-???.pkg.tar.gz  \# AUR
+	\li[Codifica/Decodifica] \$ pacman -S bsdgames
+	\li[Emulador 8086] \$ pacman -U fake86-???.pkg.tar.gz  \# AUR
 	\li[Dial Tones]        \$ pacman -S archassault/multimon-ng
 	\li[Android]           \$ pacman -S archassault/dex2jar
 %	\li[StegDetect]        \$ pacman -S archassault/stegdetect
-	\li[Tools available]   \$ pacman -Ql \I{somekit} | grep /bin/
+	\li[Ferramentas disponíveis]   \$ pacman -Ql \I{somekit} | grep /bin/
 \end{ldesc}
 
-\subsection{Other stuff}
+\subsection{Outras coisas}
 \begin{ldesc}
 	\lI[SQLi]     https://github.com/sqlmapproject/sqlmap
+	\lI[Wpscan]   https://github.com/wpscanteam/wpscan
 \end{ldesc}
 
 
