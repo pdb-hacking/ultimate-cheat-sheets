@@ -77,48 +77,48 @@
 \end{ldesc}
 
 
-\section{Disk Images / Forensics}
+\section{Imagens de disco / Análise Forense}
 
 
 \begin{ldesc}
-	\li[Mounting FS image]         \$ mount \I{fs.img} \I{mountpoint}
-	\li[~~(override user/group)]   ~~~-o uid=user,gid=users
-	\li[List orphan inodes on disk image]     \$ ils \I{fs.img}
-	\li[List deleted files on disk image]     \$ fls -drp \I{fs.img}
-	\li[Output file contents from inode no.]  \$ icat \I{fs.img} \I{1337}
-	\li[(Deleted) file contents on disk img.] \$ fcat \I{path/to/file} \I{fs.img}
+	\li[Monta uma imagem FS]         \$ mount \I{fs.img} \I{mountpoint}
+	\li[~~(override usuário/grupo)]   ~~~-o uid=user,gid=users
+	\li[Lista de \textit{inodes} órfãoss em uma imagem de disco]     \$ ils \I{fs.img}
+	\li[Lista de arquivos removidos de uma imagem de disco]     \$ fls -drp \I{fs.img}
+	\li[Fornece o conteúdo do arquivo no \textit{inode} de número 1337]  \$ icat \I{fs.img} \I{1337}
+	\li[Conteúdo (deletado) na imagem de disco] \$ fcat \I{path/to/file} \I{fs.img}
 \end{ldesc}
 
 
-\section{Disassembly}
+\section{Descompilação}
 
 \begin{ldesc}
-	\li[Disassemble program]       \$ objdump -d \I{prog}
-	\li[Dump RO data section]      \$ objdump -j .rodata -s \I{prog}
-	\li[List symbols from program] \$ nm \I{prog}
-	\li[Disassemble (ndisasm)]     \$ ndisasm \I{prog}
-	\li[Disasm. ncurses]           \$ TERM=vt100 biew \I{prog}
-	\li[Assembly]                  nasm, yasm, gas
+	\li[Descompila um programa]       \$ objdump -d \I{prog}
+	\li[\textit{Dump} da seção RO]      \$ objdump -j .rodata -s \I{prog}
+	\li[Lista os símbolos do programa] \$ nm \I{prog}
+	\li[Descompila (ndisasm)]     \$ ndisasm \I{prog}
+	\li[Descompila \textit{ncurses}]           \$ TERM=vt100 biew \I{prog}
+	\li[\textit{Assembly}]                  nasm, yasm, gas
 \end{ldesc}
 
 
-\section{Debugging}
+\section{Depuração}
 
 \begin{ldesc}
-	\li[simple / command line]     \$ gdb ./program
-	\li[run program]               > r [parameters] [< re > directs]
-	\li[print backtrace]           > bt
-	\li[set breakpoint on \I{foo}] > b \I{foo}
-	\li[unset       breakpoint(s)] > delete breakpoint [no]
-	\li[next line (over)]          > n
-	\li[step line (into)]          > s
-	\li[next instruction (over)]   > ni
-	\li[step instruction (into)]   > si
-	\li[activate display next instr.] > display/i \$pc
-	\li[continue execution]        > c
-	\li[save memory contents]      > generate-core-file
-	\li[advanced / graphical]     \$ edb \I{./program}
-	\li[trace system calls]       \$ strace \I{./program}
+	\li[simples / linha de comando]     \$ gdb ./program
+	\li[executa o programa]               > r [parameters] [< re > directs]
+	\li[exibe registro de chamadas]           > bt
+	\li[cria um ponto de parada em \I{foo}] > b \I{foo}
+	\li[remove  ponto(s) de parada(s)] > delete breakpoint [no]
+	\li[próxima linha (sobre)]          > n
+	\li[passo de linha (entra)]          > s
+	\li[próxima instrução (sobre)]   > ni
+	\li[passo de instrução (entra)]   > si
+	\li[ativa exibição da próxima instrução] > display/i \$pc
+	\li[continua a execução]        > c
+	\li[salva o conteúdo da memória]      > generate-core-file
+	\li[avançado / gráfico]     \$ edb \I{./program}
+	\li[traço das chamadas de sistema]       \$ strace \I{./program}
 \end{ldesc}
 
 % GDB Manual http://www.delorie.com/gnu/docs/gdb/gdb_38.html
