@@ -30,21 +30,21 @@
 \maketitle
 
 
-\section{Binaries and Metadata Extractors}
+\section{Extratores de Metadados de Binários}
 
 \begin{ldesc}
-	\li[Guess file type using magic]      \$ file \I{file}
-	\li[Printable strings in binary file] \$ strings \I{file}
-	\li[Hexadecimal dump]                 \$ xxd [-c\I{16} -g\I{2}] \I{file} \li
+	\li[``Adivinha'' o tipo de arquivo usando mágica]      \$ file \I{file}
+	\li[\textit{Strings} printáveis no arquivo binário] \$ strings \I{file}
+	\li[\textit{Dump} hexadecimal]                 \$ xxd [-c\I{16} -g\I{2}] \I{file} \li
 	                                      \$ hexdump \I{file} \li
 										  \$ od -tx1z \I{file}
-	\li[Binary hexadecimal editor]        \$ elvis [-c"display hex"] \I{file}
-	\li[Extract JPEG EXIF data]           \$ exiv2 \I{img.jpeg} \li
+	\li[Editor binário hexadecimal]        \$ elvis [-c"display hex"] \I{file}
+	\li[Extrai dados JPEG EXIF]           \$ exiv2 \I{img.jpeg} \li
 	                                      \$ jhead \I{img.jpeg}
-	\li[Extract PNG metadata]             \$ pngcheck -7ptv \I{img.png}
-	\li[List tarball contents]            \$ tar -tf \I{tarball.tar}
-	\li[List zip contents]                \$ unzip -l \I{file.zip}
-	\li[Extract ID3 metadata]             \$ id3info \I{file.mp3}
+	\li[Extrai metadados PNG]             \$ pngcheck -7ptv \I{img.png}
+	\li[Lista conteúdo de um \textit{tarball}]            \$ tar -tf \I{tarball.tar}
+	\li[Lista conteúdo de um \textit{zip}]                \$ unzip -l \I{file.zip}
+	\li[Extrai metadados ID3]             \$ id3info \I{file.mp3}
 \end{ldesc}
 
 
