@@ -8,6 +8,4 @@ Visite http://ctf-br.org
 Tradutores
 ---------
 
-[Chrystian de Sousa Guth](http://github.com/csguth) 
-
-[Pedro L Correia de Araujo](http://github.com/TheZakMan)
+[Chrystian de Sousa Guth](http://github.com/csguth) / [Pedro L Correia de Araujo](http://github.com/TheZakMan)
