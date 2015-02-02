@@ -9,7 +9,7 @@
 
 
 \documentclass{refcard}
-
+\usepackage[utf8]{inputenc}
 \renewcommand{\familydefault}{\sfdefault}
 
 \title{Concise Capture the Flag Cheat Sheet}
@@ -163,17 +163,17 @@
 	\li[jar contents] unzip \I{classes.jar}
 \end{ldesc}
 
-\section{Image Processing}
+\section{Processamento de Imagens}
 
 \begin{ldesc}
-	\li[Editor (simple)]   \$ pinta \I{image}
-	\li[Editor (advanced)] \$ gimp \I{image}
-	\li[Convert to pnm]    \$ \I{type}topnm \I{image.type} > \I{image}.pnm
+	\li[Editor (simples)]   \$ pinta \I{image}
+	\li[Editor (advançado)] \$ gimp \I{image}
+	\li[Converter para pnm]    \$ \I{type}topnm \I{image.type} > \I{image}.pnm
 	\li[pnm (ppm) format] P6~~~~~~~~~~~~~~~~~~\textnormal{(type)}\li
 	                      width height~~~~~~~~\textnormal{(in printable digits)} \li
 					      255~~~~~~~~~~~~~~~~~\textnormal{(max color)} \li
 					      RGBRGBRGBRGBRGB...  \textnormal{($\times$ \textit{width} $\times$ \textit{height})}
-	\li[Bar/qrcode scanner]   \$ zbarimg --raw \I{image.png}
+    \li[\textit{Scanner} de código de barras/qr]   \$ zbarimg --raw \I{image.png}
 	\li[~~(from X selection)] \$ import \I{i.png} \&\& zbarimg --raw \I{i.png}
 	\li[OCR in \I{lng} lang.] \$ tesseract [-l \I{lng}] \I{i.png} stdout
 	\li[Crop]                 \$ convert -crop \I{W}x\I{H}+\I{HP}+\I{VP} \I{i.png} \I{o.png}
@@ -182,30 +182,30 @@
 \end{ldesc}
 
 
-\section{Video Processing}
+\section{Processamento de Vídeos}
 
 \begin{ldesc}
-	\li[Extract Frames]  \$ ffmpeg -i \I{video.mp4} \I{frame-\%4d.jpeg}
-	\li[Downl. vid. (yt/etc)] \$ youtube-dl "\I{https://example.com/etc}"
+    \li[Extração de \textit{Frames}]  \$ ffmpeg -i \I{video.mp4} \I{frame-\%4d.jpeg}
+    \li[\textit{Downl.} vid. (yt/etc)] \$ youtube-dl "\I{https://example.com/etc}"
 \end{ldesc}
 
 
-\section{Audio Processing}
+\section{Processamento de Áudio}
 
 \begin{ldesc}
-	\li[Graphical editor / waveform]   \$ audacity \I{audio.flac}
-	\li[Spectrogram]                   \$ sox \I{audio.flac} -n spectrogram
-	\li[Extract notes from MIDI]       \$ midi2ly \I{music.midi}
-	\li[Generate music sheet]          \$ lilypond \I{music.ly}
+	\li[Editor gráfico / forma de onda]   \$ audacity \I{audio.flac}
+	\li[Espectrograma]                   \$ sox \I{audio.flac} -n spectrogram
+	\li[Extração de notas de um MIDI]       \$ midi2ly \I{music.midi}
+	\li[Gerador de partitura]          \$ lilypond \I{music.ly}
 \end{ldesc}
 
-\subsubsection{Decoding Phone Dialing Tones}
+\subsubsection{Decodificação de Tons de Discagem de Telefone}
 
 \begin{ldesc}
-	\li[Decode DTMF]   sox tone.ogg -esigned-integer \textbackslash \li
+	\li[Decodificação de DTMF]   sox tone.ogg -esigned-integer \textbackslash \li
 	                   ~~~~-b16 -r 22050 -t raw - | \li
 	                   multimon-ng -c -a DTMF -
-	\li[Anything else] sox ... | multimon-ng
+	\li[Outros] sox ... | multimon-ng
 \end{ldesc}
 
 
